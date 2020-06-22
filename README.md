@@ -12,7 +12,7 @@ new codeLine('event', 'Join')
 }).build(); // Important to finish your code
 ```
 
-It is also important to note that this is not the **required** behavior. Although convient, you do **not have** to stack methods like this, you could do something like follows.
+It is also important to note that this is not the **required** behavior. Although convenient, you do **not have** to stack methods like this, you could do something like follows.
 ```js
 const line = new codeLine("event", "Join");
 line.playerAction("Hello =)");

@@ -37,6 +37,8 @@ Like said above, blockType accepts either **event**, or **entity_event** right n
 ```js
 new codeLine("event", "Join") // a new codeline, starting with the Player Event JOIN.
 .playerAction("SendMessage", "hi %default!")
+.playerAction("EnableFlight")
+.build(); // it is VERY important that your code finishes with a codeLine build() method.
 ```
 
 ### **Actions/Setvar**

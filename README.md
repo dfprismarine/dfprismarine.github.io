@@ -1,5 +1,5 @@
 # **Documentation**
-All of the following are clickable to scroll to the target documentation.
+All of the following are clickable to scroll to the wanted documentation.
 
 **Important**
 - [**Codeline**](#codeline)

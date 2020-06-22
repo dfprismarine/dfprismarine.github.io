@@ -3,7 +3,7 @@
 The code relies on you stacking methods on your codeLine object. Here is an example that roughly covers everything. [You can click me to skip to the actual documentation.](#documentation)
 ```js
 const joins = new Variable("joins", "saved");
-new codeLine('event', 'join')
+new codeLine('event', 'Join')
 .setVar("+=", joins)
 .playerAction("SendMessage", joins, "People have joined this game so far!")
 .ifVar(">=", joins, 100, line => { // an if variable, with 2 chest paramaters (the joins variable, and a number)

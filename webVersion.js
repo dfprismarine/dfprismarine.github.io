@@ -4,6 +4,55 @@ var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", "https://raw.githubusercontent.com/EnjoyYourBan/enjoyyourban.github.io/master/actions.json", false );
     xmlHttp.send(null);
     actions = JSON.parse(xmlHttp.responseText);
+
+/**
+ * 
+ * PARTICLE CLASS
+ */
+class Particle {
+    constructor(particle) {
+        this.item = {
+            id: 'part',
+            data: {
+                particle: particle,
+                count:1,
+                speed:0,
+                dx:0,
+                dy:0,
+                dz:0
+            }
+        }
+        this.slot = 0;
+    }
+
+    setSlot(slot) {
+        this.slot=slot;
+        return this;
+    }
+}
+/**
+ * 
+ * SOUND CLASS
+ */
+//{"item":{"id":"part","data":{"particle":"Cloud","count":1,"speed":0.0,"dx":0.0,"dy":0.0,"dz":0.0}},"slot":1}]},"action":""}]
+class Sound {
+    constructor(sound, pitch=1, vol=1) {
+        this.item = {
+            id: 'snd',
+            data: {
+                sound: sound,
+                pitch: pitch,
+                vol: vol
+            }
+        }
+        this.slot = 0;
+    }
+
+    setSlot(slot) {
+        this.slot = slot;
+        return this;
+    }
+}
 /**
  * 
  * ITEM CLASS (outdated)
@@ -161,11 +210,11 @@ class codeLine {
         return this;
     }
 
-    _bracket(type) {
+    _bracket(type, sticky=false) {
         // {"id":"bracket","type":"norm","direct":"open"}
         this.blocks.push({
             id: "bracket",
-            type: "norm",
+            type: sticky ? "repeat" : "norm",
             direct: type ? "close" : "open"
         })
     }
@@ -238,6 +287,23 @@ class codeLine {
      * @param {any[]} [args] Items that will be placed in the chest
      * @param {Function} main f => { f.PlayerAction() }
      */
+    ifGame(type, ...args) {
+        let func = args.length ? args.pop() : null;
+        this._buildBlock('if_game', type, ...args)
+
+        this._bracket(0);
+        func(this);
+        this._bracket(1);
+
+        return this;
+    }
+
+    /**
+     * @description Takes a function, carries the CodeLine object as function paramter.
+     * @param {String} type The action for the If.
+     * @param {any[]} [args] Items that will be placed in the chest
+     * @param {Function} main f => { f.PlayerAction() }
+     */
     ifVar(type, ...args) {
         let func = args.length ? args.pop() : null;
         this._buildBlock('if_var', type, ...args)
@@ -267,6 +333,22 @@ class codeLine {
     }
     
 
+    /**
+     * @description Takes a function, carries the CodeLine object as function paramter.
+     * @param {String} type The action for the Repeat.
+     * @param {any[]} [args] Items that will be placed in the chest
+     * @param {Function} main f => { f.PlayerAction() }
+     */
+    repeat(type, ...args) {
+        let func = args.length ? args.pop() : null;
+        this._buildBlock('repeat', type, ...args)
+
+        this._bracket(0, true);
+        func(this); //
+        this._bracket(1, true);
+
+        return this;
+    }
     // AutoIf(type, func) {
     //     this.IfPlayer(type);
     //     func(this);

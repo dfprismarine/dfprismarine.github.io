@@ -4,15 +4,15 @@ All of the following are clickable to scroll to the target documentation.
 - [Variable](#variable)
 - [Location](#location)
 - [Particle](#particle)
-- (Potion)[#potion]
-- (Sound)[#sound)
+- [Potion](#potion)
+- [Sound](#sound)
 
 **IF / Repeat**
-- (IF)[#if]
-- (Repeat)[#repeat]
+- [IF][#if]
+- [Repeat](#repeat)
 
-(**Actions**)[#actions]
-(**Misc**)[#misc]
+[**Actions**](#actions)
+[**Misc**](#misc)
 
 # **Variable Items**
 ### **Number/Text**

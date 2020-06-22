@@ -17,7 +17,7 @@ It is also important to note that this is not the **required** behavior. Althoug
 const line = new codeLine("event", "Join");
 line.playerAction("Hello =)");
 
-for (let i = 0; i < 10; i++) line.playerAction("sendMessage", "There are now 10 blocks with this action and message!");
+for (let i = 0; i < 10; i++) line.playerAction("SendMessage", "There are now 10 blocks with this action and message!");
 
 line.build();
 ```

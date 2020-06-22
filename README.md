@@ -254,3 +254,8 @@ The target method sets the most recent codeblocks target. It is used to target a
 .playerAction("SendMessage", "This message will be sent to everyone!")
 .target("All Players")
 ```
+##
+## Tags
+Tags are automatically added when needed. They are fetched from a seperate page and then are automatically added to blocks that have tags. If the connection to get tag data fails, it will simply ignore tags, and you can fix them.. or something.
+
+**tags are automatically added when needed. There is not currently a way to modify them with this.**

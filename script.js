@@ -9,10 +9,11 @@
   var myCodeMirror = CodeMirror(document.body, {
     lineNumbers: true,
     tabSize: 2,
-    value: 'new codeLine("event", "Join")\n.playerAction("SendMessage", "The Website Works.")\n.build();',
+    value: "new fortnite()",
     mode: 'javascript',
     theme: 'dracula'
   });
+  
 
   function showCode()
   {
@@ -50,4 +51,21 @@
       }
     }
 
-  function copy() { alert("Coming soon.") }
+  function copy() {
+    alert("coming soon.");
+  }
+
+  function sharecode() {
+    document.getElementById("codebox").value = "https://dfprismarine.github.io/?code=" + btoa(myCodeMirror.getValue());
+  }
+
+var urlParams = new URLSearchParams(window.location.search);
+var customCode = urlParams.get("code");
+alert(customCode);
+if (customCode != null) {
+  try {
+    myCodeMirror.setValue(atob(customCode));
+  } catch (e) {
+    alert("There was an error while decrypting your code.")
+  }
+}

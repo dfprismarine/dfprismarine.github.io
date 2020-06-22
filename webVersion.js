@@ -384,7 +384,7 @@ class codeLine {
         data = btoa(String.fromCharCode.apply(null, new Uint16Array(data)));
         return { 
             json: JSON.stringify(this, null, 4),
-            give: `/give @p minecraft:ender_chest{PublicBukkitValues:{"hypercube:codetemplatedata":'{"author":"Prismarine","name":"Prismarine Template","version":1,"code":"${data}"}'},display:{Name:'{"text":"DFText Template"}'}}`,
+            give: `/give @p minecraft:ender_chest{PublicBukkitValues:{"hypercube:codetemplatedata":'{"author":"Prismarine","name":"Prismarine Template","version":1,"code":"${data}"}'},display:{Name:'{"text":"Prismarine Template"}'}}`,
             encoded: data
         }
 

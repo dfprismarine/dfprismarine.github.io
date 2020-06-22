@@ -1,6 +1,12 @@
 # **Documentation**
 All of the following are clickable to scroll to the target documentation.
 
+**Important**
+- [**Codeline**](#codeline)
+- [**Actions**](#actions)
+- [**Build**](#build)
+- [**Misc**](#misc)
+
 **Variable Items**
 - [Variable](#variable)
 - [Location](#location)
@@ -12,9 +18,44 @@ All of the following are clickable to scroll to the target documentation.
 - [IF](#if)
 - [Repeat](#repeat)
 
-**Actions / Misc**
-- [**Actions**](#actions)
-- [**Misc**](#misc)
+
+# **IMPORTANT**
+### **codeLine**
+The codeline is the main object that keeps track of all of the blocks you have setup. This is what your code should ideally start with. **This is required to make your code.** You should keep in mind that when you are done with your codeline, you can finish it using the [build()](#build) method.
+
+**Constructor**
+```js
+new codeLine(blockType, eventName)
+```
+
+- blockType - The type of block being placed, **`event` = Player Event, `entity_event` = Entity Event**
+- eventname - The name of the event you are looking for.
+
+Like said above, blockType accepts either **event**, or **entity_event** right now. It does not support process/functions. If you want to make a function, use a codeblock and replace the beginning block once its in-game.
+
+**Example**
+```js
+new codeLine("event", "Join") // a new codeline, starting with the Player Event JOIN.
+.playerAction("SendMessage", "hi %default!")
+```
+
+### **Actions/Setvar**
+All block actions/setvar are setup the same way. They all work using the `action type`, and then the chest paramaters. You can use `playerEvent`, `gameEvent`, and `setVar`.
+
+**Usage**
+```js
+<codeLine>.playerAction("SendMessage", "Hello there!", "This supports numbers aswell", 22, 19);
+
+<codeLine>.gameAction("CancelEvent");
+
+// You can also use all DF variable items as items inside of the paramaters.
+const joins = new Variable("joins", "saved");
+
+<codeline>.setVar("+=", joins)
+.playerAction("SendMessage", "Hello %default! You joined at position" + joins);
+
+```
+
 
 # **Variable Items**
 ### **Number/Text**
@@ -146,6 +187,25 @@ new codeLine("event", "Join")
 
 
 ##
+### Misc
+## build
+build is a very important method. It is called once you are done with your codeline to mark it as completed. Your code **WILL** error if you do not finish it with a `.build()`.
 
+**Example**
+```js
+new codeLine('event', 'Join')
+.playerAction("SendMessage", "You joined a game, yay")
+.build();
+```
 
+Notice how the build is called. This is very important, without the build method at the end, your code will not read correctly.
+##
+## target
+The target method sets the most recent codeblocks target. It is used to target a specific group of players.
 
+**Example**
+```js
+<codeLine>
+.playerAction("SendMessage", "This message will be sent to everyone!")
+.target("All Players")
+```

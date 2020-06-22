@@ -1,10 +1,27 @@
+/**
+ * 
+ * hi im ban
+ * most of this code was made for nodejs
+ * so thats why things are messy and 
+ * some are repetitive.
+ * i've never actually made js that wasnt for nodejs so theres probably some bad code
+ * anyways usually all of these classes are in seperate files, but uh. 
+ * enjoy looking through this garbage
+ */
+
+
 let actions = {};
 // get JSON 
 var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", "https://raw.githubusercontent.com/EnjoyYourBan/enjoyyourban.github.io/master/actions.json", false );
     xmlHttp.send(null);
     actions = JSON.parse(xmlHttp.responseText);
-
+/**
+ * 
+ * MCItem Class
+ * probably not well made, cant' access minecraft for testing rn
+ */
+// REMOVED <buggy>
 /**
  * 
  * PARTICLE CLASS
@@ -364,11 +381,11 @@ class codeLine {
 
     build() {
         let data = pako.gzip(JSON.stringify(this));
-        data = String.fromCharCode.apply(null, new Uint16Array(data));
+        data = btoa(String.fromCharCode.apply(null, new Uint16Array(data)));
         return { 
             json: JSON.stringify(this, null, 4),
-            give: "idk how to format this yet lol",
-            encoded: btoa(data)
+            give: `/give @p minecraft:ender_chest{PublicBukkitValues:{"hypercube:codetemplatedata":'{"author":"Prismarine","name":"Prismarine Template","version":1,"code":"${data}"}'},display:{Name:'{"text":"DFText Template"}'}}`,
+            encoded: data
         }
 
     }
@@ -385,3 +402,4 @@ class codeLine {
 
     
 }
+

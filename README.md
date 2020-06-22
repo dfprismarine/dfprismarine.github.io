@@ -1,6 +1,19 @@
 # **Documentation**
-### test
-[abc](#location)
+All of the following are clickable to scroll to the target documentation.
+**Variable Items**
+- [Variable](#variable)
+- [Location](#location)
+- [Particle](#particle)
+- (Potion)[#potion]
+- (Sound)[#sound)
+
+**IF / Repeat**
+- (IF)[#if]
+- (Repeat)[#repeat]
+
+(**Actions**)[#actions]
+(**Misc**)[#misc]
+
 # **Variable Items**
 ### **Number/Text**
 Number / Text Numbers and Text variables are automatically parsed from normal strings/numbers.

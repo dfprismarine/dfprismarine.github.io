@@ -5,8 +5,8 @@ The code relies on you stacking methods on your codeLine object. Here is an exam
 const joins = new Variable("joins", "saved");
 new codeLine('event', 'join')
 .setVar("+=", joins)
-.playerAction("SendMessage", joins + "People have joined this game so far!")
-.ifVar(">=", joins, 100, line => // an if variable, with 2 chest paramaters (the joins variable, and a number)
+.playerAction("SendMessage", joins, "People have joined this game so far!")
+.ifVar(">=", joins, 100, line => { // an if variable, with 2 chest paramaters (the joins variable, and a number)
     line // Start stacking methods on the object again
     .playerAction("SendMessage", "That means more than 100 users have joined!");
 }).build(); // Important to finish your code

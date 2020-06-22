@@ -9,7 +9,7 @@
   var myCodeMirror = CodeMirror(document.body, {
     lineNumbers: true,
     tabSize: 2,
-    value: "new fortnite()",
+    value: 'new codeLine("event", "Join")\n.playerAction("SendMessage", "The Website Works.")\n.build();',
     mode: 'javascript',
     theme: 'dracula'
   });
@@ -61,7 +61,6 @@
 
 var urlParams = new URLSearchParams(window.location.search);
 var customCode = urlParams.get("code");
-alert(customCode);
 if (customCode != null) {
   try {
     myCodeMirror.setValue(atob(customCode));

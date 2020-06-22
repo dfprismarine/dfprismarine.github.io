@@ -9,10 +9,10 @@ All of the following are clickable to scroll to the target documentation.
 - [Sound](#sound)
 
 **IF / Repeat**
-- [IF][#if]
+- [IF](#if)
 - [Repeat](#repeat)
 
-** Actions / Misc**
+**Actions / Misc**
 - [**Actions**](#actions)
 - [**Misc**](#misc)
 

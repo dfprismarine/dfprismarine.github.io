@@ -202,7 +202,7 @@ To learn more about arrow functions, [here's the MDN documentation on it.](https
 **Example**
 ```js
 new codeLine("event" "Jump")
-.ifPlayer("isSprinting", param => {
+.ifPlayer("IsSprinting", param => {
   param // Start stacking methods on the object again
   .playerAction("SendMessage", "This is inside of the if.");
 })

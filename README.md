@@ -1,9 +1,30 @@
-# **Documentation**
-All of the following are clickable to scroll to the wanted documentation.
+# **Example**
 
+The code relies on you stacking methods on your codeLine object. Here is an example that roughly covers everything. [You can click me to skip to the actual documentation.](#documentation)
+```js
+const joins = new Variable("joins", "saved");
+new codeLine('event', 'join')
+.setVar("+=", joins)
+.playerAction("SendMessage", joins + "People have joined this game so far!")
+.ifVar(">=", joins, 100, line => // an if variable, with 2 chest paramaters (the joins variable, and a number)
+    line // Start stacking methods on the object again
+    .playerAction("SendMessage", "That means more than 100 users have joined!");
+}).build(); // Important to finish your code
+```
+
+It is also important to note that this is not the **required** behavior. Although convient, you do **not have** to stack methods like this, you could do something like follows.
+```js
+const line = new codeLine("event", "Join");
+line.playerAction("Hello =)");
+
+for (let i = 0; i < 10; i++) line.playerAction("sendMessage", "There are now 10 blocks with this action and message!");
+
+line.build();
+```
+# **Documentation**
 **Important**
 - [**Codeline**](#codeline)
-- [**Actions**](#actions)
+- [**Actions**](#actionssetvar)
 - [**Build**](#build)
 - [**Misc**](#misc)
 
@@ -165,7 +186,29 @@ new codeLine("event", "Join")
 ##
 
 # IF blocks / Repeat
+### **IF**
+Supports the following `ifPlayer`, `ifEntity`, `ifGame`, and `ifVar`. These work the same as the [repeat](#repeat). The final paramter to the If block must be a function. The function will automatically be executed and the code inside of it. If there is no function in the end, your code will error.
 
+```js
+ifGame(action, item*, item*, etc*, FUNC => {});
+```
+
+- action - The type of IF, for example, for `ifPlayer` you might want to use `isSprinting`
+- item/etc - Items, Variables, whatever you want.
+- FUNC - This one is very important. This is a function that will be called when the if is registered.
+
+To learn more about arrow functions, [here's the MDN documentation on it.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). **It is also important to note that you can stack as many ifs inside of eachother as you'd like.**
+
+**Example**
+```js
+new codeLine("event" "Jump")
+.ifPlayer("isSprinting", param => {
+  param // Start stacking methods on the object again
+  .playerAction("SendMessage", "This is inside of the if.");
+})
+.playerAction("SendMessage", "This is outside of the if")
+.build();
+```
 ### **Repeat** 
 
 Works the same as IFs. Will return the codeline object to continue stacking methods. 

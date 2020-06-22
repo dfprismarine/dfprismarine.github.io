@@ -1,5 +1,6 @@
 # **Documentation**
 All of the following are clickable to scroll to the target documentation.
+
 **Variable Items**
 - [Variable](#variable)
 - [Location](#location)
@@ -11,8 +12,9 @@ All of the following are clickable to scroll to the target documentation.
 - [IF][#if]
 - [Repeat](#repeat)
 
-[**Actions**](#actions)
-[**Misc**](#misc)
+** Actions / Misc**
+- [**Actions**](#actions)
+- [**Misc**](#misc)
 
 # **Variable Items**
 ### **Number/Text**

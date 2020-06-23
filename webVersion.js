@@ -21,6 +21,28 @@ var xmlHttp = new XMLHttpRequest();
  * MCItem Class
  * probably not well made, cant' access minecraft for testing rn
  */
+
+/**
+ * 
+ * Value Class
+ */
+ class Value {
+     constructor(value, target="default") {
+        this.item = {
+            id: 'g_val',
+            data: {
+                type: value,
+                target: target
+            }
+        }
+        this.slot = 0;
+     }
+
+     setSlot(slot) {
+         this.slot = slot;
+         return this;
+     }
+ }
 // REMOVED <buggy>
 /**
  * 
@@ -384,7 +406,7 @@ class codeLine {
         data = btoa(String.fromCharCode.apply(null, new Uint16Array(data)));
         return { 
             json: JSON.stringify(this, null, 4),
-            give: `/give @p minecraft:ender_chest{PublicBukkitValues:{"hypercube:codetemplatedata":'{"author":"Prismarine","name":"Prismarine Template","version":1,"code":"${data}"}'},display:{Name:'{"text":"Prismarine Template"}'}}`,
+            give: `/give @p minecraft:ender_chest{PublicBukkitValues:{"hypercube:codetemplatedata":'{"author":"Prismarine","name":"Prismarine Template","version":1,"code":"${data}"}'},display:{Name:'{"text":"DFText Template"}'}}`,
             encoded: data
         }
 

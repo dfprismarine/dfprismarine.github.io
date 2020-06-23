@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/086a8c5dcb.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script src="pako.js"></script>
@@ -18,7 +17,19 @@
     <link rel="stylesheet" href="codemirror.css"></link>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/javascript/javascript.min.js"></script>
+    <!-- THEMES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/eclipse.min.css" integrity="sha256-5eoSWOIAQM+oO3Zuqz/bj6jUHeGzsE7Qwi7I8yHk+mY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/duotone-dark.min.css" integrity="sha256-+WUzhafOIsH4jjDQsZhKg9gGVT+jojLWBXRBeRUohXA=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/darcula.min.css" integrity="sha256-dEer9wEion6q/2ZyEj4UxkXpQdGUQKddEo0eFBqNgsg=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/night.min.css" integrity="sha256-knb5ZRPkCgPOd8jOleC0lomlfcOA/JxzgwjF3iljij8=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/duotone-dark.min.css" integrity="sha256-+WUzhafOIsH4jjDQsZhKg9gGVT+jojLWBXRBeRUohXA=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/ambiance.min.css" integrity="sha256-zhBYpvArP3KQo/ecsWwsCzazoc/kwnq3S5QVah0qN5s=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/ayu-mirage.min.css" integrity="sha256-qg2tzB5aIdem/quRc3s2DQ58T+CaCcZZBrsRplOl0Xw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/twilight.min.css" integrity="sha256-zyuJ0FWvhiSN7E5v6KPPQkRDNYMgeS30l294Ehmd5sg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/xq-dark.min.css" integrity="sha256-0kFnpjRwDKqZ9X/61SWsNfGmPNtPMVkj11zQ5mTyKUM=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/neat.min.css" integrity="sha256-j3SjL2m/Va9BR4hCRL0dwE1bnevcOxzI4oXEJs94Pqk=" crossorigin="anonymous" />
+    <!-- THEMES -->
     <link rel="icon" href="prismarine.png">
     <script src="preview.js"></script>
     <title>Prismarine</title>
@@ -56,10 +67,6 @@
         </ul>
     </nav>
     <span id="separator">&#8203;</span>
-    <div id="CodeMirrorr" style="width: 60%; margin: 0 auto;">
-
-    </div>
-
     </script>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -73,6 +80,25 @@
         <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="copy()">Copy</button>
         <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="sharecode()">Share Code</button>
         <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="preview()">Preview Template</button>
+
+        <div id="CodeMirrorr" style="width: 60%; margin: 0 auto;">
+            <div class="dropdown" style="margin: 5px 490px;">
+                <button class="btn btn-dark buttone dropdown-toggle" style="background-color: #282a36; color: white; border:3px solid #1C1F21" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Editor Themes
+        </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button" onclick="changeTheme('dracula')">Dracula</button>
+                    <button class="dropdown-item" type="button" onclick="changeTheme('duotone-dark')">Duotone-Dark</button>
+                    <button class="dropdown-item" type="button" onclick="changeTheme('night')">Night</button>
+                    <button class="dropdown-item" type="button" onclick="changeTheme('ambiance')">Ambiance</button>
+                    <button class="dropdown-item" type="button" onclick="changeTheme('ayu-mirage')">Ayu-Mirage</button>
+                    <button class="dropdown-item" type="button" onclick="changeTheme('neat')">Neat</button>
+                    <button class="dropdown-item" type="button" onclick="changeTheme('eclipse')">Eclipse</button>
+                    <button class="dropdown-item" type="button" onclick="changeTheme('twilight')">Twilight</button>
+                    <button class="dropdown-item" type="button" onclick="changeTheme('xq-dark')">XQ-Dark</button>
+                </div>
+            </div>
+        </div>
         <center>
             <span id="separator">&#8203;</span>
         </center>

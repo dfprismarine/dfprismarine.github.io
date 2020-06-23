@@ -63,8 +63,9 @@ var urlParams = new URLSearchParams(window.location.search);
 var customCode = urlParams.get("code");
 if (customCode != null) {
   try {
-    myCodeMirror.setValue(atob(customCode));
+    myCodeMirror.setValue(atob(customCode))
   } catch (e) {
     alert("There was an error while decrypting your code.")
+    console.log(e);
   }
 }

@@ -8,17 +8,20 @@
     transition-duration: 0.3s;
     -webkit-transition-property: transform;
     transition-property: transform;
-  }
-  .hvr-grow-rotate:hover, .hvr-grow-rotate:focus, .hvr-grow-rotate:active {
+}
+
+.hvr-grow-rotate:hover,
+.hvr-grow-rotate:focus,
+.hvr-grow-rotate:active {
     -webkit-transform: scale(1.1) rotate(4deg);
     transform: scale(1.1) rotate(4deg);
-  }
+}
 
-  .prismarine {
-      letter-spacing: 3px;
-  }
+.prismarine {
+    letter-spacing: 3px;
+}
 
-  .hvr-grow {
+.hvr-grow {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -28,14 +31,31 @@
     transition-duration: 0.3s;
     -webkit-transition-property: transform;
     transition-property: transform;
-  }
-  .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-  }
+}
 
-  .buttone {
-      background-color: #8E7DBE;
-      border-color: #353546;
-      letter-spacing: 0px;
-  }
+.buttone {
+    background-color: #8E7DBE;
+    border-color: #353546;
+    letter-spacing: 0px;
+}
+
+.themeselection {
+    background-color: #8E7DBE;
+    border-color: #353546;
+}
+
+.dropdown-menu {
+    background-color: #8E7DBE
+}
+
+.dropdown-item:hover {
+    background-color: #353546;
+    color: white;
+}

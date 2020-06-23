@@ -26,9 +26,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/duotone-dark.min.css" integrity="sha256-+WUzhafOIsH4jjDQsZhKg9gGVT+jojLWBXRBeRUohXA=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/ambiance.min.css" integrity="sha256-zhBYpvArP3KQo/ecsWwsCzazoc/kwnq3S5QVah0qN5s=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/ayu-mirage.min.css" integrity="sha256-qg2tzB5aIdem/quRc3s2DQ58T+CaCcZZBrsRplOl0Xw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/mbo.min.css" integrity="sha256-Iqz7IykBvPMIKFFS/PlazbM04DdQbnoVbXT5K40Nk4U=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/idea.min.css" integrity="sha256-u5CYSGrVCa7S1EkmuyKXqXsZsv0vR5ZqPvRdYmI/204=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/twilight.min.css" integrity="sha256-zyuJ0FWvhiSN7E5v6KPPQkRDNYMgeS30l294Ehmd5sg=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/xq-dark.min.css" integrity="sha256-0kFnpjRwDKqZ9X/61SWsNfGmPNtPMVkj11zQ5mTyKUM=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/neat.min.css" integrity="sha256-j3SjL2m/Va9BR4hCRL0dwE1bnevcOxzI4oXEJs94Pqk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/moxer.min.css" integrity="sha256-Bfl2kFUV/V8+sjLhlVGcPkDssmGxXbWoItlzwxCq/sA=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/material.min.css" integrity="sha256-VLpXrP0QELfGI3Wc+zzjjH2lzAAfym09szxiE/fAB5g=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/material-darker.min.css" integrity="sha256-NveGfWWFIJXalidCTKeUqyS1gYfMvf32N/2ntXq0F/g=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/yonce.min.css" integrity="sha256-oG6kBspy4WIKL0cykJXO9HQPBpFv3CdiNamv2nq3bJA=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.55.0/theme/liquibyte.min.css" integrity="sha256-qSy5pIwXSTQmMHIt+T1Y90IItv0YBU3cRFsSzDzzEMU=" crossorigin="anonymous" />
     <!-- THEMES -->
     <link rel="icon" href="prismarine.png">
     <script src="preview.js"></script>
@@ -87,15 +94,22 @@
           Editor Themes
         </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button" onclick="changeTheme('dracula')">Dracula</button>
-                    <button class="dropdown-item" type="button" onclick="changeTheme('duotone-dark')">Duotone-Dark</button>
-                    <button class="dropdown-item" type="button" onclick="changeTheme('night')">Night</button>
-                    <button class="dropdown-item" type="button" onclick="changeTheme('ambiance')">Ambiance</button>
-                    <button class="dropdown-item" type="button" onclick="changeTheme('ayu-mirage')">Ayu-Mirage</button>
-                    <button class="dropdown-item" type="button" onclick="changeTheme('neat')">Neat</button>
-                    <button class="dropdown-item" type="button" onclick="changeTheme('eclipse')">Eclipse</button>
-                    <button class="dropdown-item" type="button" onclick="changeTheme('twilight')">Twilight</button>
-                    <button class="dropdown-item" type="button" onclick="changeTheme('xq-dark')">XQ-Dark</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('dracula')">Dracula</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('duotone-dark')">Duotone-Dark</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('night')">Night</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('ambiance')">Ambiance</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('ayu-mirage')">Ayu-Mirage</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('neat')">Neat</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('eclipse')">Eclipse</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('twilight')">Twilight</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('xq-dark')">XQ-Dark</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('moxer')">Moxer</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('liquibyte')">Liquibyte</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('material')">Material</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('material-darker')">Material-Darker</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('yonce')">Yonce</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('idea')">Idea</button>
+                    <button class="dropdown-item themeselection" type="button" onclick="changeTheme('mbo')">MBO</button>
                 </div>
             </div>
         </div>

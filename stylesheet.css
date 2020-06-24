@@ -59,3 +59,9 @@
     background-color: #353546;
     color: white;
 }
+
+.popover-header {
+    background-color: lime;
+    color: white;
+    font-weight: bold;
+}

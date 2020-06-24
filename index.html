@@ -81,17 +81,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <span id="separator">&#8203;</span>
     <center>
-        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="giveCommand()">Give Command</button>
-        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="json()">JSON</button>
-        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="encode()">Encode</button>
-        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="copy()">Copy</button>
-        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="sharecode()">Share Code</button>
-        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="preview()">Preview Template</button>
+        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="giveCommand()"><i class="fas fa-at"></i> Give Command</button>
+        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="json()"><i class="fas fa-code"></i> JSON</button>
+        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="encode()"><i class="fas fa-asterisk"></i> Encode</button>
+        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="copy()" data-toggle="popover" title="Success!" data-content="The output has been copied to your clipboard!"><i class="fas fa-copy"></i> Copy</button>
+        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="sharecode()"><i class="fas fa-share-alt"></i> Share Code</button>
+        <button type="button" class="btn btn-dark buttone" style="background-color: #282a36; color: white; border:3px solid #1C1F21" onclick="preview()"><i class="fas fa-eye"></i> Preview Template</button>
 
         <div id="CodeMirrorr" style="width: 60%; margin: 0 auto;">
             <div class="dropdown" style="margin: 5px 490px;">
                 <button class="btn btn-dark buttone dropdown-toggle" style="background-color: #282a36; color: white; border:3px solid #1C1F21" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Editor Themes
+                    <i class="fas fa-edit"></i> Editor Themes
         </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item themeselection" type="button" onclick="changeTheme('dracula')">Dracula</button>

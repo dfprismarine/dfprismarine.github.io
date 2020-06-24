@@ -14,6 +14,7 @@ var myCodeMirror = CodeMirror(document.body, {
     theme: 'dracula'
 });
 
+
 function changeTheme(theme) {
     console.log(theme)
     myCodeMirror.setOption("theme", theme);
@@ -24,7 +25,18 @@ function showCode() {
     console.log("\n" + text + "\n ");
 }
 
-showCode();
+function copy() {
+    try {
+        var a = document.getElementById("codebox");
+        a.select();
+        document.execCommand("copy");
+        $(function() {
+            $('[data-toggle="popover"]').popover()
+        })
+    } catch (e) {
+        alert(e);
+    }
+}
 
 function json() {
     try {
@@ -52,10 +64,6 @@ function giveCommand() {
     } catch (e) {
         alert(e);
     }
-}
-
-function copy() {
-    alert("coming soon.");
 }
 
 function sharecode() {

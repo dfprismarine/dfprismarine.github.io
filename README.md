@@ -1,9 +1,9 @@
 # **Example**
 
-The code relies on you stacking methods on your codeLine object. Here is an example that roughly covers everything. [You can click me to skip to the actual documentation.](#documentation)
+The code relies on you stacking methods on your CodeLine object. Here is an example that roughly covers everything. [You can click me to skip to the actual documentation.](#documentation)
 ```js
 const joins = new Variable("joins", "saved");
-new codeLine('event', 'Join')
+new CodeLine('event', 'Join')
 .setVar("+=", joins)
 .playerAction("SendMessage", joins, "People have joined this game so far!")
 .ifVar(">=", joins, 100, line => { // an if variable, with 2 chest paramaters (the joins variable, and a number)
@@ -14,7 +14,7 @@ new codeLine('event', 'Join')
 
 It is also important to note that this is not the **required** behavior. Although convenient, you do **not have** to stack methods like this, you could do something like follows.
 ```js
-const line = new codeLine("event", "Join");
+const line = new CodeLine("event", "Join");
 line.playerAction("Hello =)");
 
 for (let i = 0; i < 10; i++) line.playerAction("SendMessage", "There are now 10 blocks with this action and message!");
@@ -41,12 +41,12 @@ line.build();
 
 
 # **IMPORTANT**
-### **codeLine**
+### **CodeLine**
 The codeline is the main object that keeps track of all of the blocks you have setup. This is what your code should ideally start with. **This is required to make your code.** You should keep in mind that when you are done with your codeline, you can finish it using the [build()](#build) method.
 
 **Constructor**
 ```js
-new codeLine(blockType, eventName)
+new CodeLine(blockType, eventName)
 ```
 
 - blockType - The type of block being placed, **`event` = Player Event, `entity_event` = Entity Event**
@@ -56,10 +56,10 @@ Like said above, blockType accepts either **event**, or **entity_event** right n
 
 **Example**
 ```js
-new codeLine("event", "Join") // a new codeline, starting with the Player Event JOIN.
+new CodeLine("event", "Join") // a new codeline, starting with the Player Event JOIN.
 .playerAction("SendMessage", "hi %default!")
 .playerAction("EnableFlight")
-.build(); // it is VERY important that your code finishes with a codeLine build() method.
+.build(); // it is VERY important that your code finishes with a CodeLine build() method.
 ```
 
 ### **Actions/Setvar**
@@ -67,9 +67,9 @@ All block actions/setvar are setup the same way. They all work using the `action
 
 **Usage**
 ```js
-<codeLine>.playerAction("SendMessage", "Hello there!", "This supports numbers aswell", 22, 19);
+<CodeLine>.playerAction("SendMessage", "Hello there!", "This supports numbers aswell", 22, 19);
 
-<codeLine>.gameAction("CancelEvent");
+<CodeLine>.gameAction("CancelEvent");
 
 // You can also use all DF variable items as items inside of the paramaters.
 const joins = new Variable("joins", "saved");
@@ -116,7 +116,7 @@ new Location(*x, *y, *z, *pitch, *yaw)
 
 ```js
 const loc = new Location(45.5, 0, 22.5);
-new codeLine("event", "Join")
+new CodeLine("event", "Join")
 .playerAction("Teleport", loc)
 .build();
 ```
@@ -136,7 +136,7 @@ new Particle(type);
 Example:
 
 ```js
-new codeLine("event", "Join")
+new CodeLine("event", "Join")
 .playerAction("GiveItem", new Particle("Cloud"))
 .build();
 ```
@@ -158,7 +158,7 @@ Amplifier is optional. For a full list of effects, look at the wiki, or use DFVi
 Example:
 ```js
 const pot = new Potion("Strength", 60, 2);
-new codeLine("Event", "Jump")
+new CodeLine("Event", "Jump")
 .playerAction("GiveEffect", pot)
 .build();
 ```
@@ -177,7 +177,7 @@ new Sound(noise, *pitch, *yaw);
  
  Example:
 ```js
-new codeLine("event", "Join")
+new CodeLine("event", "Join")
 .playerEvent("PlaySound", new Sound("Pling"))
 .playerEvent("SendMessage", "%default has joined!")
 .target("All Players")
@@ -201,7 +201,7 @@ To learn more about arrow functions, [here's the MDN documentation on it.](https
 
 **Example**
 ```js
-new codeLine("event" "Jump")
+new CodeLine("event" "Jump")
 .ifPlayer("IsSprinting", param => {
   param // Start stacking methods on the object again
   .playerAction("SendMessage", "This is inside of the if.");
@@ -224,7 +224,7 @@ repeat(action, item, item, line => {});`
  Example:
 
 ```js
-new codeLine("event", "Join")
+new CodeLine("event", "Join")
 .repeat("Multiple", 20, line => {
     line.playerAction("SendMessage", "Hello");
 }).build();
@@ -238,7 +238,7 @@ build is a very important method. It is called once you are done with your codel
 
 **Example**
 ```js
-new codeLine('event', 'Join')
+new CodeLine('event', 'Join')
 .playerAction("SendMessage", "You joined a game, yay")
 .build();
 ```
@@ -250,7 +250,7 @@ The target method sets the most recent codeblocks target. It is used to target a
 
 **Example**
 ```js
-<codeLine>
+<CodeLine>
 .playerAction("SendMessage", "This message will be sent to everyone!")
 .target("All Players")
 ```

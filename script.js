@@ -9,7 +9,7 @@
 var myCodeMirror = CodeMirror(document.body, {
     lineNumbers: true,
     tabSize: 2,
-    value: 'new codeLine("event", "Join")\n.playerAction("SendMessage", "The Website Works.")\n.build();',
+    value: 'new CodeLine("event", "Join")\n.playerAction("SendMessage", "The Website Works.")\n.build();',
     mode: 'javascript',
     theme: 'dracula'
 });

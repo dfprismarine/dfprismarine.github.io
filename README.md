@@ -110,7 +110,7 @@ Variables have 3 states. "saved", "unsaved", and "local". If none is given, it w
 new Location(*x, *y, *z, *pitch, *yaw)
   ```
   
-  Locations are relevant to plot location. Meaning (0, 0) is the (center?) of your plot. 
+  Locations are relevant to plot location. Meaning (0, 0) is the corner of your plot. 
   
   Example:
 

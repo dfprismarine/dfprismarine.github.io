@@ -199,7 +199,7 @@ class Location {
     }
 }
 
-class codeLine {
+class CodeLine {
     /**
      * @param blockType blockType, accepts 'event', 'entity_event', 'func'
      */
@@ -424,4 +424,6 @@ class codeLine {
 
     
 }
+
+const codeLine = CodeLine;
 

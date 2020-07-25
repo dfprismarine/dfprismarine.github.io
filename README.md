@@ -34,6 +34,8 @@ line.build();
 - [Particle](#particle)
 - [Potion](#potion)
 - [Sound](#sound)
+- [Game Value](#value)
+- [Numbers](#misc)
 
 **IF / Repeat**
 - [IF](#if)
@@ -184,6 +186,24 @@ new CodeLine("event", "Join")
 .build();
 ```
 ##
+##
+### **Value**
+Represents a Game Value item. Can be constructed using the "new" keyword.
+**NOTE: Both GameValue and Value are acceptable constructors.**
+
+ **Constructor** **optional*
+ ```js
+new GameValue(value, *target);
+  ```
+ - value - The game value name
+ - *target** - The target [killer, etc] (default: default)
+ Example:
+```js
+new CodeLine("event", "Join")
+.playerEvent("SetVar", "=", new Variable("Example"), new Value("Server TPS"))
+.build();
+```
+##
 
 # IF blocks / Repeat
 ### **IF**
@@ -233,6 +253,14 @@ new CodeLine("event", "Join")
 
 ##
 ### Misc
+## Num
+**Note: Numbers will automatically be made into a number variable, you should only use this for more advanced uses such as needing to use %math or %var**
+
+Numbers can be constructed simply by using the Num constructor.
+
+`new Num(value)`
+- value *the value of the number variable.
+##
 ## build
 build is a very important method. It is called once you are done with your codeline to mark it as completed. Your code **WILL** error if you do not finish it with a `.build()`.
 

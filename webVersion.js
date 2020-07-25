@@ -266,7 +266,7 @@ class CodeLine {
             args: {
                 items: [
                     ...args.map((item, i) => {
-                        if (typeof item != 'number' && typeof item != 'string') return item.setSlot(i);
+                        if (typeof item != 'number' && typeof item != 'string') return Object.assign({}, item.setSlot(i)); // Creates a shallow copy of the item with the new slot
                         return new Item({
                             id: typeof item == 'number' ? 'num' : 'txt',
                             name: item.toString(),

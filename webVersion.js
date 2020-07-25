@@ -259,7 +259,7 @@ class CodeLine {
     }
 
     _buildBlock(block, type, ...args) {
-        const tags = this._parseTags(type);
+        const tags = this._parseTags(type, block);
         this.blocks.push({
             block: block,
             id: "block",
@@ -280,7 +280,7 @@ class CodeLine {
         });
     }
 
-    _parseTags(type){
+    _parseTags(type, blockType="player_action"){
         const blockData = actions[type];
         if (!blockData) return [];
         const tags = [];
@@ -294,7 +294,7 @@ class CodeLine {
                         tag: tag.name,
                         option: tag.defaultOption,
                         action: type,
-                        block: 'player_action'
+                        block: blockType
                     }
                 },
                 slot: 26-i

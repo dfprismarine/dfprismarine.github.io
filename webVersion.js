@@ -43,6 +43,10 @@ var xmlHttp = new XMLHttpRequest();
          return this;
      }
  }
+
+// GameValue = Value;
+const GameValue = Value;
+
 // REMOVED <buggy>
 /**
  * 

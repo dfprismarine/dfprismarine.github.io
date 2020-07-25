@@ -108,6 +108,26 @@ class Item {
     }
 }
 /**
+ *
+ * Num
+ */
+class Num {
+    constructor(value, slot=0) {
+        this.item = {
+            id: "num",
+            data: { name: value }
+        }
+        this.slot = slot;
+    }
+
+        setSlot(slot) {
+            this.slot = slot;
+            return this;
+        }
+
+}
+
+/**
  * 
  * VARIABLE CLASS
  */

@@ -200,7 +200,7 @@ new GameValue(value, *target);
  Example:
 ```js
 new CodeLine("event", "Join")
-.playerEvent("SetVar", "=", new Variable("Example"), new Value("Server TPS"))
+.setVar("=", new Variable("Example"), new Value("Server TPS"))
 .build();
 ```
 ##
